@@ -1,0 +1,29 @@
+﻿<Window x:Class="G.Excel.Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Title}" Height="350" Width="525"
+        Icon="{Binding ImageSource}"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource WindowStyle}"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding ImageSource}" Stretch="Uniform" Margin="10,5,469,80" Grid.Row="0"/>
+        <TextBlock Text="{Binding Title}" Height="23" Width="100" Margin="40,7,365,80"></TextBlock>
+        <Button Content="X" Grid.Row="0" Width="20" Margin="475,5,10,82" Click="Button_Click_2"></Button>
+        <TextBlock x:Name="txtMsg" Height="50" TextWrapping="Wrap" FontSize="16" Grid.Row="0" Margin="10,50,10,10"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtFilePath" Height="23" Grid.Column="0" Margin="10"></TextBox>
+            <Button Content="..." Width="23" Grid.Column="1" Click="Button_Click_1"></Button>
+        </Grid>
+        <Button x:Name="btnExecute" Content="统计" Grid.Row="2" Click="btnExecute_Click_1"></Button>
+    </Grid>
+</Window>
